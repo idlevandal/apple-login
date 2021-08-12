@@ -1,16 +1,35 @@
 # au_com_inthecode_applesignin
 
-A new Flutter application.
+Apple sign in
 
-## Getting Started
+** when creating app, make sure has signature com.domainName.appName
 
-This project is a starting point for a Flutter application.
+Create Firebase project
+Authentication => Sign-in-method => Enable apple signin
 
-A few resources to get you started if this is your first Flutter project:
+Setting up iOS app in Firebase - Register app
+1.
+iOS bundle ID => found in Runner.xcodeproj/project.pbxproj
+Eg. PRODUCT_BUNDLE_IDENTIFIER = com.example.appname;
+or xCode => Runner => General tab => Bundle identifier
+2.
+Download config file => add to xCode at same level as info.plist
+3.
+Skip rest of setup in Firebase
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Add
+  cloud_firestore:
+  firebase_auth:
+  Firebase_core:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://www.filledstacks.com/post/sign-in-with-google-or-apple-sign-in-using-flutter/
+
+In apple developer account
+Click ‘Certificates, IDs & Profiles’ tab
+Select ‘Identifiers’ => Identifier + (add Identifier)
+Select ‘Sign In with Apple’ checkbox.
+
+In Xcode
+Signing & Capabilities tab (after general tab)
+Select a team (eg. In The Code)
++ Capability => click add capability button, add ‘Sign in with Apple’
